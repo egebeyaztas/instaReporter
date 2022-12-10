@@ -1,0 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <title>Insta Reporter</title>
+</head>
+<body>
+    <div class="form">
+        <div class="title">İşletme Hesabınızı Ekleyin!</div>
+        <div class="subtitle">Topladığınız verileri buraya gireceksiniz.</div>
+        <form action="{% url 'add' %}" method="POST">
+        {% csrf_token %}
+        <div class="input-container ic1">
+          <input id="accesstoken" name="accesstoken" class="input" type="text" placeholder=" " />
+          <div class="cut"></div>
+          <label for="accesstoken" class="placeholder">Access Token</label>
+        </div>
+        <div class="input-container ic2">
+          <input id="clientid" name="clientid" class="input" type="text" placeholder=" " />
+          <div class="cut"></div>
+          <label for="clientid" class="placeholder">Client ID</label>
+        </div>
+        <div class="input-container ic2">
+          <input id="clientsecret" name="clientsecret" class="input" type="text" placeholder=" " />
+          <div class="cut cut-short"></div>
+          <label for="clientsecret" class="placeholder">Client Secret</>
+        </div>
+        <div class="input-container ic2">
+          <input id="fbid" name="fbid" class="input" type="text" placeholder=" " />
+          <div class="cut cut-short"></div>
+          <label for="fbid" class="placeholder">Facebook Page ID</>
+        </div>
+        <div class="input-container ic2">
+          <input id="igid" name="igid" class="input" type="text" placeholder=" " />
+          <div class="cut cut-short"></div>
+          <label for="igid" class="placeholder">Instagram ID</>
+        </div>
+        <div class="input-container ic2 last-ic2">
+          <input id="username" name="username" class="input" type="text" placeholder=" " />
+          <div class="cut cut-short"></div>
+          <label for="username" class="placeholder">Username</>
+        </div>
+        <button type="text" class="submit">Ekle</button>
+        </form>
+    </div>
+</body>
+</html>
